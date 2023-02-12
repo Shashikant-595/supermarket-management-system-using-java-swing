@@ -33,7 +33,7 @@ public class Seller extends javax.swing.JFrame {
    Connection conn=null;
   public void SelectSeler(){
       try{
-         conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "Beed@9130");
+         conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "");
          St=conn.createStatement();
          Rs=St.executeQuery("Select* From selertb ");
          selertable.setModel(DbUtils.resultSetToTableModel(Rs));
@@ -321,7 +321,7 @@ public class Seller extends javax.swing.JFrame {
         
         try{
              Class.forName("org.postgresql.Driver");
-       java.sql.Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "Beed@9130");
+       java.sql.Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "");
                 System.out.println("Database Connected...");
         java.sql.Statement stmt=conn.createStatement();
           String query="INSERT INTO selertb(selerid,selername,selerpass,selergender) VALUES('"+seler+"','"+name+"','"+pass+"','"+gender+"')";
@@ -369,7 +369,7 @@ public class Seller extends javax.swing.JFrame {
                  
         }else{
             try{
-      conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "Beed@9130");
+      conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "");
         String cetid=txtseler.getText();
         String Query="Delete from selertb where selerid="+cetid;
         Statement Add =conn.createStatement();
