@@ -37,7 +37,7 @@ public class Billing extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     public void BillSeler() {
         try {
-            conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "Beed@9130");
+            conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "");
             St = conn.createStatement();
             Rs = St.executeQuery("Select* From products");
             protable.setModel(DbUtils.resultSetToTableModel(Rs));
