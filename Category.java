@@ -306,7 +306,7 @@ public class Category extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
  public void SelectSeler(){
       try{
-         conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "Beed@9130");
+         conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/dbname", "postgres", "");
          St=conn.createStatement();
          Rs=St.executeQuery("Select* From category");
          cattable.setModel(DbUtils.resultSetToTableModel(Rs));
@@ -331,7 +331,7 @@ public class Category extends javax.swing.JFrame {
         
         try{
              Class.forName("org.postgresql.Driver");
-       java.sql.Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "Beed@9130");
+       java.sql.Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "");
                 System.out.println("Database Connected...");
         java.sql.Statement stmt=conn.createStatement();
           String query="INSERT INTO category(catid,catname,descr) VALUES('"+seler+"','"+name+"','"+pass+"')";
@@ -379,7 +379,7 @@ public class Category extends javax.swing.JFrame {
                  
         }else{
             try{
-      conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "Beed@9130");
+      conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "");
         String cetid=txtcat.getText();
         String Query="Delete from category where catid="+cetid;
         Statement Add =conn.createStatement();
