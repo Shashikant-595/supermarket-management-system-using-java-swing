@@ -48,7 +48,7 @@ public class Billing extends javax.swing.JFrame {
     int prid,newQty;
     public void update() {
         try {
-            conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "Beed@9130");
+            conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/databasename", "sqlname", "");
             String Query = "Update products set productqnty='" + newQty + "'" + "where productid=" + prid + "";
             Statement Add = conn.createStatement();
             Add.executeUpdate(Query);
@@ -64,7 +64,7 @@ public class Billing extends javax.swing.JFrame {
      private void Getcomp()
     {
        try{
-         conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "Beed@9130");
+         conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/databasename", "postgres", "");
          St=conn.createStatement();
          Rs=St.executeQuery("Select* From category");
         while (Rs.next()){
@@ -441,7 +441,7 @@ Double uprice, productTot = 0.0;
 
     private void btnfilterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnfilterMouseClicked
         try {
-            conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "Beed@9130");
+            conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/databasename", "postgres", "");
             St = conn.createStatement();
             Rs = St.executeQuery("Select* From products where productcat='"+combobox.getSelectedItem().toString()+"'");
             protable.setModel(DbUtils.resultSetToTableModel(Rs));
