@@ -395,7 +395,7 @@ public class Seller extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Missing Vallues");
         }else{
             try{
-                  conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "Beed@9130");
+                  conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "");
                   String Query ="Update selertb set selername='"+txtname.getText()+"'"+",selerpass='"+txtpass.getText()+"'"+",selergender='"+txtgender.getSelectedItem().toString()+"'"+"where selerid="+txtseler.getText()+"";
                 Statement Add=conn.createStatement();
                 Add.executeUpdate(Query);
