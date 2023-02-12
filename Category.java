@@ -404,7 +404,7 @@ public class Category extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Records are Missing ");
         }else{
             try{
-                  conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "Beed@9130");
+                  conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/", "postgres", "");
                   String Query ="Update category  set catname='"+txtname.getText()+"'"+",descr='"+txtdesc.getText()+"'"+"where catid='"+txtcat.getText()+"'";
                 Statement Add=conn.createStatement();
                 Add.executeUpdate(Query);
