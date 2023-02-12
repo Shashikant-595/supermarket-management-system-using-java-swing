@@ -34,7 +34,7 @@ public class Products extends javax.swing.JFrame {
    Connection conn=null;
 public void ProductSeler(){
       try{
-         conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "Beed@9130");
+         conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "");
          St=conn.createStatement();
          Rs=St.executeQuery("Select* From products");
          protable.setModel(DbUtils.resultSetToTableModel(Rs));
@@ -50,7 +50,7 @@ public void ProductSeler(){
     private void Getcomp()
     {
        try{
-         conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "Beed@9130");
+         conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "");
          St=conn.createStatement();
          Rs=St.executeQuery("Select* From category");
         while (Rs.next()){
@@ -421,7 +421,7 @@ public void ProductSeler(){
         
         try{
              Class.forName("org.postgresql.Driver");
-       java.sql.Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "Beed@9130");
+       java.sql.Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "");
                 System.out.println("Database Connected...");
         java.sql.Statement stmt=conn.createStatement();
           String query="INSERT INTO products(productid,productname,productqnty,productprice,productcat) VALUES('"+productid+"','"+name+"','"+quantity+"','"+price+"','"+category+"')";
@@ -474,7 +474,7 @@ public void ProductSeler(){
             JOptionPane.showMessageDialog(this, "Missing Vallues");
         }else{
             try{
-                  conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "Beed@9130");
+                  conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "");
                   String Query ="Update products set productname='"+txtname.getText()+"'"+",productqnty='"+txtquantity.getText()+"'"+",productprice='"+txtprice.getText()+"'"+",productcat='"+combobox.getSelectedItem().toString()+"'"+"where productid="+txtproductid.getText()+"";
                 Statement Add=conn.createStatement();
                 Add.executeUpdate(Query);
@@ -496,7 +496,7 @@ public void ProductSeler(){
                  
         }else{
             try{
-      conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "Beed@9130");
+      conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/Tkproject", "postgres", "");
         String product=txtproductid.getText();
         String Query="Delete from products where productid="+product;
         Statement Add =conn.createStatement();
